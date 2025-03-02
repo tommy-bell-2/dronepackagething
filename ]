@@ -81,10 +81,10 @@ int main(){
 			cout<<"Drone " << on_drone<< " will make the delivery" << endl;
 		}
 		else{
-			float lowest_dist = 100;
+			int lowest_dist = 500;
 			int closest;
 			for (int drone_num = 0; drone_num<8; drone_num++){
-				float dist = calc_distance_travelled(input_row, input_col, drone_locations[drone_num][0], drone_locations[drone_num][1]);
+				int dist = calc_distance_travelled(input_row, input_col, drone_locations[drone_num][0], drone_locations[drone_num][1]);
 				if (dist < lowest_dist){
 					lowest_dist = dist;
 					closest = drone_num + 1;
@@ -100,8 +100,7 @@ int main(){
 				cout << line << "\n";
 			}
 			cout<<"Drone " << closest << " will make the delivery" << endl;
-			cout << fixed << setprecision(2);
-			cout<< "This drone traveled a distance of " << lowest_dist << " blocks" << endl;
+			cout<< "This drone traveled a distance of " << setprecision(2) << lowest_dist << " blocks" << endl;
 
 		}
 		cout<<"Thank you for using our delivery services" << endl;
